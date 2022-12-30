@@ -1,0 +1,24 @@
+{
+  "name": "qr-attendance",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npm run build && next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/font": "13.1.1",
+    "bootstrap": "^5.2.3",
+    "eslint": "8.30.0",
+    "eslint-config-next": "13.1.1",
+    "html5-qrcode": "^2.3.4",
+    "next": "13.1.1",
+    "next-pwa": "^5.6.0",
+    "qr-scanner": "^1.4.2",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.7.0",
+    "react-dom": "18.2.0"
+  }
+}
