@@ -25,6 +25,6 @@ function Qrscanner(props) {
       <div id="reader"></div>
     </div>
   )
-};
+}
 
 export default Qrscanner;
