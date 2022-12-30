@@ -1,7 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import styles from '../styles/Home.module.css'
+
+StudentInfoCard.propTypes = {
+  setModalFunc : PropTypes.func.isRequired,
+  isModalSet : PropTypes.bool.isRequired,
+  studentName : PropTypes.string.isRequired,
+}
 
 function StudentInfoCard(props) {
   const handleClose = () => {

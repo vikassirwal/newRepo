@@ -1,11 +1,8 @@
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head'
-import { useEffect, useState } from 'react';
-import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import Qrscanner from './qrscanner';
 import StudentInfoCard from './studentInfoCard';
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const [isModalSet, setModalFunc] = useState(false);

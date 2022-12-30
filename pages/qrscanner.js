@@ -1,9 +1,15 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import {Html5QrcodeScanner} from "html5-qrcode"
+
+Qrscanner.propTypes = {
+  setModalFunc : PropTypes.func.isRequired,
+  setStudentname: PropTypes.func.isRequired
+}
 
 function Qrscanner(props) {
   useEffect(() => {
-    function onScanSuccess(decodedText, decodedResult) {
+    function onScanSuccess(decodedText) {
       props.setModalFunc(true);
       props.setStudentname(decodedText);
       html5QrcodeScanner.clear();
