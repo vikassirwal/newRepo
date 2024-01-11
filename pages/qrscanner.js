@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {Html5QrcodeScanner} from "html5-qrcode"
+import {getStudentInfo} from "../controller/controller"
 
 Qrscanner.propTypes = {
   setModalFunc : PropTypes.func.isRequired,
@@ -8,11 +9,13 @@ Qrscanner.propTypes = {
 }
 
 function Qrscanner(props) {
-  useEffect(() => {
-    function onScanSuccess(decodedText) {
+  useEffect( () => {
+    async function onScanSuccess(decodedText) {
       props.setModalFunc(true);
       props.setStudentname(decodedText);
-      html5QrcodeScanner.clear();
+      console.log('decodedText', decodedText)
+      const response = await getStudentInfo(decodedText);
+      console.log('response=>', response)
     }
     
     function onScanFailure(error) {

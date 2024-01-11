@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3000;
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
+const {getStudentInfo} = require('../controller/controller');
 
 app
   .prepare()
@@ -15,6 +16,11 @@ app
 
     server.get("*", (req, res) => {
       return handle(req, res);
+    });
+
+    server.get("/api/getStudentInfo", async (req, res) => {
+      const response = await getStudentInfo(req.query.id);
+      res.send(response);
     });
 
     server.listen(PORT, err => {
